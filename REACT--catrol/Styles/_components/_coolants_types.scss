@@ -1,0 +1,36 @@
+.CoolantTypes {
+    &.is-mobile {
+        .coolant__types {
+            ._item {
+                width: calc(50% - 5px);
+                min-height: 0;
+                margin: 0 0 1rem;
+                padding: 1rem;
+            }
+        }
+        .button.-start {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 1.5rem;
+            z-index: 1;
+        }
+    }
+
+    .button.-start {
+
+        @media (max-height: $mobile) {
+            display: none;
+        }
+    }
+
+    .buttons.-continue-resp {
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        @media (max-height: $mobile) {
+            display: block;
+        }
+    }
+}

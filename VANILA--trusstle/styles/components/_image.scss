@@ -1,0 +1,43 @@
+#image {
+	position: absolute;
+	bottom: -10px;
+	right: 0;
+	overflow-x: hidden;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+	@include bp(xs) {
+		bottom: -20px;
+	}
+	
+	img {
+		position: absolute;
+		bottom: -1px;
+		right: -1px;
+		max-height: 150px;
+		transform: translate(10%, 100%);
+		transition: transform .5s ease-in-out;
+
+
+		@include bp(xs) {
+			max-height: 400px;
+			max-width: 80%;
+			transform: translate(0, 100%);
+		}
+		
+		&.is-active {
+			transform: translate(10%, 0);			
+			@include bp(xs) {
+				transform: translate(0);		
+			}
+		}
+	}
+
+	@include bp(xs) {
+		right: 0;
+		transform: translate(0);
+		max-width: 50%;
+	}
+
+}

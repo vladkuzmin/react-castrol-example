@@ -1,0 +1,43 @@
+// Colours
+$primary-bg: #1a2342;
+
+$black: #333;
+$white: #fff;
+$navy: #002755;
+$blue: #0095da;
+$blue--darker: #007fc6;
+
+$blue--dark: #032854;
+$blue--deep: #1270FD;
+$blue--electric: #00A9DC;
+$blue--ice: #A1DFF2;
+
+// Gradients colours
+$gr--blue-light: #00a8de;
+$gr--blue-dark: #006bff;
+$gr--blue-light-hover: #0086d0;
+$gr--blue-dark-hover: #0052d7;
+
+$gr--blue-border-left: #257ef0;
+$gr--blue-border-right: #379ddf;
+
+$gr--ice-light: #fff;
+$gr--ice-dark: #9edff3;
+
+$gr--ice-light-hover: #c9dbf1;
+$gr--ice-dark-hover: #6fd0ee;
+
+$blueArray: #00a8de, #00a8dd,  #009ae7, #0093eb, #008bef, #0086f2, #0086f3, #0086f4, #0077fa, #0072fd;
+$redArray: #d40019, #d40020,  #d31b19, #d34616, #ff7504, #ff8b00, #ffa200, #ffbf00, #ffe100, #f6ff1c;
+
+$pressureArray: #ff7504 #d40019, #f6ff1c #ff7504, #06dda7 #f6ff1c, #06dda7 #04e8af;
+
+// Font
+$bodyFont: Arial, Helvetica Neue, Helvetica, sans-serif;
+$headerFont: 'Castrol', Arial, sans-serif;
+
+// Breakpoints
+$desktop: 992px;
+$tablet: 768px;
+$phablet: 640px;
+$mobile: 420px;

@@ -1,0 +1,25 @@
+#header
+	#social-toggle
+		span Share
+		include ../../img/icons/share.svg
+	#social-buttons
+		#facebook
+			picture
+				source(media="(max-width: 519px)" srcset="/assets/img/icons/facebook-white.svg")
+				img(src="/assets/img/icons/facebook.svg", alt="Share facebook")
+		#twitter
+			picture
+				source(media="(max-width: 519px)" srcset="/assets/img/icons/twitter-white.svg")
+				img(src="/assets/img/icons/twitter.svg", alt="Share twitter")
+	._copy
+		#copy 
+			include ../../img/icons/copy.svg
+			._alert Copied embed code
+
+
+#logo
+	span Powered by
+	a(href="#" title="Trussle")
+		picture
+			source(media="(max-width: 519px)" srcset="/assets/img/trussle-logo-white.svg")
+			img(src="/assets/img/trussle-logo.svg" alt="Trussle Logo")

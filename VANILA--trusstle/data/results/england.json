@@ -1,0 +1,92 @@
+[
+	{
+		"title": "Shared Ownership",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor excepturi qui eos beatae ex nesciunt ratione hic libero optio, delectus maxime quidem error, consectetur ipsa cum. Sequi blanditiis sapiente quis!",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["No"],
+			"london": ["Yes", "No"],
+			"age": ["15-39", "40+"],
+			"income": ["£60k or less", "£60-90k"],
+			"deposit": ["Yes"]
+		}
+	},
+
+	{
+		"title": "Shared Ownership",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis repudiandae hic, saepe id tempora vel fugiat enim. Eos illum totam sequi dolor molestiae vero eum harum, itaque necessitatibus fuga voluptate.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes"],
+			"london": ["Yes", "No"],
+			"age": ["15-39"]
+		}
+	},
+
+	{
+		"title": "Shared Ownership Wales",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate quibusdam itaque alias quae veniam nemo, animi voluptates explicabo incidunt laborum vitae! Natus deserunt nemo, consequuntur recusandae repellat temporibus vel illum.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes"],
+			"london": ["Yes", "No"],
+			"age": ["40+"]
+		}
+	},
+
+	{
+		"title": "Help to Buy",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quaerat, amet animi veniam. Perspiciatis nihil autem nostrum debitis illo, consequatur placeat? Odit delectus, numquam officiis deleniti labore, hic laboriosam iusto.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes", "No"],
+			"london": ["Yes", "No"],
+			"age": ["15-39", "40+"],
+			"income": ["£60k or less", "£60-90k", "£90k+"],
+			"deposit": ["Yes"]
+		}
+	},
+
+	{
+		"title": "Lifetime ISA",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, recusandae dolorum architecto corporis aspernatur pariatur excepturi inventore ea, accusantium accusamus, nesciunt numquam! Voluptate atque obcaecati nulla reprehenderit eaque iure, quam.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes", "No"],
+			"london": ["Yes", "No"],
+			"age": ["15-39"],
+			"income": ["£60k or less", "£60-90k", "£90k+"],
+			"deposit": ["No"]
+		}
+	},
+
+	{
+		"title": "Right to Buy",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aut, cum voluptate reiciendis sint veniam, ex deserunt assumenda dolor fugit a saepe totam cupiditate voluptates hic consequatur? Voluptatum, ex blanditiis.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes"],
+			"london": ["Yes", "No"],
+			"age": ["15-39", "40+"]
+		}
+	},
+
+	{
+		"title": "Rent to Buy",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus velit, mollitia, molestiae iure nulla fuga sapiente cupiditate, illum minima quod temporibus, natus laborum dolores quos. Odio necessitatibus repudiandae impedit ut.",
+		"link": "#",
+		"alt": "",
+		"filters": {
+			"tenancy": ["Yes"],
+			"london": ["Yes", "No"],
+			"age": ["15-39", "40+"]
+		}
+	}
+
+]

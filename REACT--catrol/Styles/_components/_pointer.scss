@@ -1,0 +1,78 @@
+.is-touched {
+    .pointer {
+        display: none !important;
+    }
+}
+
+.pointer {
+    width: 50px;
+    height: 50px;
+    border: 2px solid $white;
+    position: fixed;
+    z-index: 2;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    @include transition(.25s, (transform, opacity, border-color));
+    opacity: .75;
+    border-radius: 50%;
+
+    // span {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     width: 4px;
+    //     height: 4px; 
+    //     border-radius: 50%;
+    //     background: white;
+    // }
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%; 
+        height: 100%;
+        border: 1px solid $blue--electric;
+        border-radius: 50%;
+        animation: none;
+        opacity: 0;
+    }
+
+    &:before {
+        border: 1px solid $blue--deep;
+    }
+
+    &.is-down {
+        opacity: 1;
+        border-color: rgba($white, 0);
+        transform: translate(-50%, -50%) scale(.75);
+        &:before,
+        &:after {
+            animation: pointer 1s linear infinite;
+        }
+        &:after {
+            animation-delay: .5s;
+        }
+    }
+}
+
+@keyframes pointer {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: .35;
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(5);
+    }
+}

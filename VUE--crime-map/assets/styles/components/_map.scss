@@ -1,0 +1,131 @@
+#app {
+    #results {
+        position: relative;
+        height: 100vh;
+        max-height: 670px;
+        display: flex;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            height: auto;
+            overflow: auto;
+            max-height: 100%;
+        }
+    }
+
+    #search {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        background: $white;
+        box-shadow: 5px 0 20px rgba($black, .2);
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .search__head {
+        max-width: 500px;
+        text-align: left;
+        padding: 30px 10px;
+        background: $white;
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+        
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+
+        &.is-active {
+            opacity: 1;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: $blue;
+        }
+    }
+
+    .search__titles {
+        padding: 0 20px;
+        p {
+            font-weight: bold;
+        }
+    }
+
+
+
+    .map {
+        position: relative;
+        flex-grow: 1;
+        height: 100%;
+        width: calc(100% - 500px);
+
+        &.is-hidden {
+            display: none;
+        }
+
+        @media(max-width: 768px) {
+            height: 300px;
+            padding: 0 20px;
+            width: 100%;
+        }
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .resume {
+        position: absolute;
+        bottom: 24px;
+        border-radius: 3px;
+        right: 60px;
+        padding: 10px 12px;
+        font-size: .85rem;
+        background: $white;
+        z-index: 1;
+        cursor: pointer;
+        box-shadow: 0 3px 10px rgba($black, .2);
+
+        @media (max-width: 768px) {
+            right: 30px;
+            bottom: 10px;
+        }
+    }
+
+    .info {
+        font-weight: 500;
+
+        div {
+            display: inline-block;
+        }
+
+        span {
+            display: inline-block;
+            background: $blue;
+            color: $white;
+            width: 16px;
+            text-align: center;
+            height: 16px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: .75rem;
+            line-height: 1rem;
+            margin-left: 5px;
+        }
+    }
+
+    .gmnoprint {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+}

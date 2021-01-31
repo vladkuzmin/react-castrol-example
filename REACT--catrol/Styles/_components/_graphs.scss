@@ -1,0 +1,215 @@
+.graphs__wrapper {
+    @include transition(1s, (opacity));
+    &.is-hidden {
+        opacity: 0;
+    }
+
+    .-right {
+        @media (max-width: $mobile) {
+            display: flex;
+        }
+    }
+}
+
+.graphs {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 992px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+
+    @media (max-width: $desktop) {
+        transform: translate(-50%, -30%);
+    }
+
+    @media (max-width: $mobile) {
+        transform: translate(-50%, -50%);
+    }
+    
+    @media (max-width: $mobile) {
+        width: 90%;
+        padding: 2rem 3rem;
+        background:rgba($blue--dark, .5);
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+    }
+
+
+}
+
+.graph {
+
+    ._title {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        font-family: $headerFont;
+    }
+    &__lines {
+        width: 15vw;
+        min-width: 125px;
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media (max-width: $mobile) {
+            min-width: 80px;
+        }
+
+        div {
+            height: 1px;
+            background: rgba($white, .5);
+            margin-top: .9rem;
+            position: relative;
+
+            @media (max-height: $phablet) {
+                margin-top: .5rem;
+            }
+
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                width: calc(100% + 0.5rem);
+                height: 6px;
+                background: $blue--deep;
+                top: 50%; 
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 25px;
+                @include transition(1s, opacity);
+            }
+
+            &:before {
+                filter: blur(3px);   
+            }
+
+            @each $color in $blueArray {
+                $i: index($blueArray, $color);
+                &:nth-child(#{$i}) { 
+                    &:before,
+                    &:after {
+                        background: $color;
+                    }
+                }
+            }
+
+            &.is-hidden {
+                &:before,
+                &:after {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.-torque {
+        text-align: right;
+        .graph__lines {
+            align-items: flex-end;
+            div {
+                @each $color in $redArray {
+                    $i: index($redArray, $color);
+                    &:nth-child(#{$i}) { 
+                        &:before,
+                        &:after {
+                            background: $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.-pressure {
+        margin-top: 2rem;
+        @media (max-width:$mobile) {
+            margin-top: 0;
+            text-align: center;
+        }
+    }
+}
+
+.graph__circles {
+    margin-top: .5rem;
+    width: 90px;
+    height: 90px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    position: relative;
+
+    @media (max-width: 320px) {
+        width: 60px;
+        height: 60px;
+    }
+
+    ._overlay,
+    ._gradients div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        width: 90%;
+        height: 90%;
+    }
+
+    ._overlay {
+        width: 80%;
+        height: 80%;
+        background: $blue--dark;
+        transition: all .5s ease-in-out;
+    }
+
+    ._gradients {
+        div {
+            transition: opacity .5s ease-in-out;
+            opacity: 0;
+            @each $color in $pressureArray {
+                $i: index($pressureArray, $color);
+                &:nth-child(#{$i}) {
+                    background: radial-gradient(circle at 50%, nth($color, 2) 55%, nth($color, 1) 75%);
+                }
+            }
+
+            &.is-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    ._marks {
+        ._mark {
+            width: 10px;
+            height: 1px;
+            background: $white;
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            opacity: .5;
+            transform: translate(-50%, 0);
+            &:nth-child(2) {
+                bottom: 10px;
+            }
+            &:nth-child(3) {
+                bottom: 16px;
+            }
+            &:nth-child(4) {
+                bottom: 22px;
+            }
+        }
+    }
+
+    ._subtitle{
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        font-family: $headerFont;
+    }
+}

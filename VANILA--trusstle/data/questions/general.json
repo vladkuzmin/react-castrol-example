@@ -1,0 +1,50 @@
+{
+	
+	"0": {
+		"title": "Are you a British or EU/EEA citizen, or do you have indefinite leave to remain?",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"img": [
+			"/assets/img/scenes/nationality/one.svg",
+			"/assets/img/scenes/nationality/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 1
+			},
+			{
+				"label": "No",
+				"next": "Unfortuntely Help to Buy scheme as they are only available to those in the UK",
+				"desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+				"img": ["/assets/img/scenes/no-scheme.svg"]
+			}
+		]
+	},
+	
+	"1": {
+		"title": "Where in the UK do you live?",
+		"desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti commodi, laboriosam dolores vitae dolorem saepe quisquam minima neque odio quasi eligendi numquam maxime quas quaerat ducimus vero! Ipsam, cum, dicta.",
+		"img": [
+			"/assets/img/scenes/country/one.svg",
+			"/assets/img/scenes/country/two.svg"
+		],
+		"options": [
+			{
+				"label": "England",
+				"next": "json"
+			},
+			{
+				"label": "Scotland",
+				"next": "json"
+			},
+			{
+				"label": "Wales",
+				"next": "json"
+			},
+			{
+				"label": "Northern Ireland",
+				"next": "json"
+			}
+		]
+	}
+}

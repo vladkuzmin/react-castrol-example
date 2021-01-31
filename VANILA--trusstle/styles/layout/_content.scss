@@ -1,0 +1,47 @@
+
+
+main {
+	background: $color-bg;
+	border: 15px solid $green;
+	height: auto;
+	min-height: calc(100vh - 35px);
+	position: relative;
+	padding: 20px 30px 100px 30px;
+	transform-origin: 50% 50%;
+	transition: transform .5s ease-in-out .5s,
+				min-height .1s linear .75s;
+
+	&.is-scaled {
+		min-height: 100vh;
+		transform: scale(1.5);
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		@include bp(xs) {
+			transform: scale(1.5);
+		}
+	}
+	
+	@include bp(xs) {
+		border-width: 20px;
+		min-height: 100vh;
+		padding: 100px 40px;
+		transform-origin: 90% 90%;
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		width: 100vw;
+		height: 50px;
+		background: $green;
+		position: absolute;
+		top: 100%;
+		left: -15px;
+		
+		@include bp(xs) {
+			display: none;
+		}
+	}
+
+}

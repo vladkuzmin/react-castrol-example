@@ -1,0 +1,83 @@
+{
+	"0": {
+		"title": "Do you own your home?",
+		"img": [
+			"/assets/img/scenes/own-house/one.svg",
+			"/assets/img/scenes/own-house/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 1
+			},
+			{
+				"label": "No",
+				"next": 2
+			}
+		]
+	},
+
+	"1": {
+		"title": "Is your home under offer with solicitors instructing the sale?",
+		"img": [
+			"/assets/img/scenes/main-house/one.svg",
+			"/assets/img/scenes/main-house/two.svg",
+			"/assets/img/scenes/main-house/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 2
+			},
+			{
+				"label": "No",
+				"next": "Unfortunately you are not eligible for a Help to Buy scheme as you already own a home",
+				"desc": "The schemes are designed to help people purchase their only home.",
+				"img": ["/assets/img/scenes/no-scheme.svg"]
+			}
+		]
+	},
+
+	"2": {
+		"title": "Are you a tenant of a social housing landlord, the Housing Executive or a registered housing association?",
+		"img": [
+			"/assets/img/scenes/council/two.svg",
+			"/assets/img/scenes/council/one.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 3,
+				"key": "tenancy"
+			},
+			{
+				"label": "No",
+				"next": 3,
+				"key": "tenancy"
+			}
+		]
+	},
+
+	"3": {
+		"title": "What's your age?",
+		"img": [
+			"/assets/img/scenes/age/one.svg",
+			"/assets/img/scenes/age/two.svg",
+			"/assets/img/scenes/age/three.svg"
+		],
+		"options": [
+			{
+				"label": "15-39",
+				"next": "results", 
+				"key": "age"
+			},
+			{
+				"label": "40+",
+				"next": "results", 
+				"key": "age"
+			}
+		]
+	}
+
+
+}

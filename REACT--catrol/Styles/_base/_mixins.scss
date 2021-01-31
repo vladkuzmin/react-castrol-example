@@ -1,0 +1,14 @@
+// GRADIENTS
+
+@mixin gradient($color1, $color2, $dir: to left) {
+    background: $color1;
+    background: linear-gradient($dir, $color1 0%, $color2 100%);
+}
+
+
+// Transitions
+@mixin transition($duration: 0.2s, $property: (opacity, visibility), $delay: 0s) {
+    transition-duration: $duration;
+    transition-property: $property;
+    transition-delay: $delay;
+}

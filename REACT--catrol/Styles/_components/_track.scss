@@ -1,0 +1,183 @@
+.track {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 75%;
+    height: 20vh;
+    pointer-events: none;
+    @include transition(1s, (opacity, transform));
+
+    @media (max-width: $phablet) {
+        width: 100%;
+    }
+
+    @media (max-height: $mobile) {
+        bottom: 0;
+    }
+
+    &.is-hidden {
+        transition-duration: .25s;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.75);
+    }
+
+    &__landscape  {
+        opacity: 1;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 100vw;
+        transform: translate(-50%);
+        opacity: .05;
+        img {
+            width: 200%;
+            animation: landscape 10s linear infinite;
+        }
+    }
+
+    &__lines {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        transform: perspective(200px) rotateX(40deg);
+        transform-origin: bottom;
+        opacity: .5;
+        span {
+            display: block;
+            width: 2px;
+            height: 100%;
+            background: $white;
+            border-radius: 5px;
+            &:nth-child(even) {
+                width: 1px;
+            }
+        }
+    }
+
+    &__pseudo_lines {
+        width: 100%;
+        position: absolute;
+        top: calc(50% - 1px);
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        transform: perspective(200px) rotateX(40deg);
+        transform-origin: top;
+        opacity: .5;
+        span {
+            display: block;
+            width: 2px;
+            height: 100%;
+            background: $white;
+            border-radius: 5px;
+            &:nth-child(even) {
+                width: 1px;
+                height: 65%;
+            }
+        }
+    }
+
+    &__numbers {
+        margin-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+        position: absolute;
+        top: 70%;
+        width: 115%;
+        left: 50%;
+        transform: translate(-50%);
+        // display: none; // TODO: remove
+        div {
+            width: 1px;
+            position: relative;
+        }
+        span {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+
+    &__car {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        width: 75%;
+        transform: translate(-80%);
+        transition: left 1s ease-in-out;
+
+        @media (orientation: portrait) {
+            width: 100%;
+        }
+
+        ._car__speed {
+            position: absolute;
+            top: 75%;
+            background: radial-gradient(circle, rgba($blue--deep, 1) 50%, rgba($blue--deep,0) 100%);
+            width: 50%;
+            height: 10%;
+            right: 20%;
+            filter: blur(5px);
+            @include transition(1s, transform);
+            transform-origin: right center;
+        }
+
+        ._car_wrapper {
+            position: relative;
+            &.-mirror {
+                position: absolute;
+                width: 100%;
+                top: 57%;
+                left: 0;
+                transform: scaleY(-1);
+                opacity: .2;
+                mask-image: linear-gradient(to bottom, transparent 35%, $black 100%);
+            }
+        }
+        
+        ._car {
+            width: 100%;
+        }
+
+        ._wheel {
+            position: absolute;
+            width: 12%;
+            transform: translate(-50%, -50%);
+            &.-one {
+                left: 20%;
+                top: 74%;
+                animation: wheel .75s linear infinite;
+            }
+            &.-two {
+                left: 83.4%;
+                top: 74%;
+                animation: wheel .75s linear infinite;
+            }
+        }
+    }
+}
+
+
+
+@keyframes wheel {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes landscape {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-50%);
+    }
+}

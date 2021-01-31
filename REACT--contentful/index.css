@@ -1,0 +1,73 @@
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.inputs {
+  display: flex;
+}
+
+.input {
+  padding-bottom: 1rem;
+  margin: 1rem 0 0;
+}
+
+.input label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input label.-sm {
+  font-size: .75rem;
+}
+
+.input .hint {
+  font-size: .75rem;
+  color: rgba(0,0,0,.35);
+  margin-top: 0.5rem;
+}
+
+input,
+textarea {
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  width: calc(100% - 3rem);
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.error {
+  color: red;
+  font-size: .75rem;
+  margin-top: 0.5rem;
+}
+
+.is-error input,
+.is-error textarea {
+  border-color: red;
+}
+
+.caption {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.caption ._number {
+  position: absolute;
+  right: calc(100% + 0.5rem);
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  color: rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.1);
+  text-align: center;
+}

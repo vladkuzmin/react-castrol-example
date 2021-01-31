@@ -1,0 +1,28 @@
+// Colours
+$white: #fff;
+$black: #000;
+
+
+$color-bg: #D9FFD6;
+$green: #00414C;
+$green-light: #50C087;
+$green-lightest: #BAECB6;
+$pink: #FF7396;
+$pink-dark: #FF7396;
+
+// Fonts
+$font: 'font regular', sans-serif;
+$font-bold: 'font bold', sans-serif;
+
+// Breakpoints
+$breakpoints: (
+  "0": 0,
+  "xss": 375px,
+  "xs": 520px,
+  "ss": 620px,
+  "sm": 768px,
+  "md": 991px,
+  "bg": 1025px,
+  "lg": 1200px,
+  "xl": 1800px
+);

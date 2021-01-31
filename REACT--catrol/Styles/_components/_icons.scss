@@ -1,0 +1,481 @@
+.icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    @include transition(.75s, opacity);
+
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:after {
+        content: attr(data-text);
+        position: absolute;
+        white-space: nowrap;
+        top: calc(100% + .5rem);
+        left: 50%;
+        transform: translate(-50%);
+        font-size: .7rem;
+        text-transform: uppercase;
+        pointer-events: none;
+    }
+
+    &.-social {
+        &:after {
+            opacity: 0;
+            visibility: hidden;
+            left: auto;
+            right: calc(100% + 1rem);
+            top: 50%;
+            transform: translate(10px, -50%);
+            color: $blue--electric;
+            transition: transform .2s ease-in-out,
+                        opacity .2s ease-in-out;
+        }
+    }
+
+    span,
+    span svg {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .-down,
+    .-up {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .-continue {
+        svg {
+            width: 25px;
+        }
+    }
+
+    .-up {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    .-next {
+        svg {
+            width: 11px;
+            @include transition(.2s, (opacity, transform));
+            &:nth-child(1) {
+                filter: blur(3px);
+                opacity: 0;
+            }
+        }
+    }
+
+    .-drag {
+        svg {
+            transform: translate(0, 2px);
+        }
+    }
+
+    .-hotspot,
+    .-plus,
+    .-minus {
+        pointer-events: none;
+        width: 50%;
+        height: 2px;
+        background: $white;
+        transition: all .25s ease-in-out;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 100%;
+            height: 100%;
+            background: $white;
+        }
+    }
+
+    .-minus {
+        &:after {
+            display: none;
+        }
+    }
+
+    &.is-animate {
+        .gradient__bg {
+            &:before {
+                animation: pulse 1s linear infinite;
+            }
+        }
+    }
+
+    &:hover {
+        .gradient__bg {
+            opacity: 0;
+            &:before {
+                animation: none;
+            }
+        }
+
+        .gradient__line {
+            opacity: 1;
+            border-color: $white;
+            &:after {
+                border-color: $white;
+                opacity: 1;
+            }
+        }
+
+        &.-social {
+            &:after {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, -50%);
+            }
+        }
+        .-next {
+            svg {
+                transform: translate(-35%, -50%);
+                &:nth-child(1) {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.-drag {
+            .gradient__bg {
+                opacity: 1;
+            }
+            .gradient__line {
+                opacity: 0;
+            }
+        }
+    }
+
+    &:active {
+        .gradient__line {
+            border-color: $gr--blue-light-hover;
+            &:after {
+                border-color: $gr--blue-dark-hover;
+            }
+        }
+    }
+    
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.icon {
+    &.is-active {
+        z-index: 1;
+        .-hotspot {
+            transform: translate(-50%, -50%) rotate(135deg);
+        }
+    }
+}
+
+.icon__close {
+    line {
+        stroke: $blue--dark;
+        stroke-width: 15px;
+    }
+}
+
+
+.icon__plus {
+    display: inline-block;
+    width: 15px;
+    position: relative;
+    height: 1px;
+    background: $white;
+    transition: all .2s ease-in-out;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: $white;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+.menu__toggle {
+    .gradient__bg {
+        opacity: 0;
+        @include gradient(
+            $gr--ice-light, 
+            $gr--ice-dark
+        );
+    }
+    .gradient__line {
+        border: 1px solid $gr--ice-light-hover;
+        &:after {
+            border: 1px solid $gr--ice-dark-hover;
+        }
+    }
+    .-menu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 22px;
+        height: 22px;
+        transition: transform .2s ease-in-out;
+        span {
+            display: block;
+            background: $white;
+            width: 100%;
+            height: 1px;
+            transition: transform .2s ease-in-out,
+                        background .2s ease-in-out;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity .2s ease-in-out;
+                @include gradient($gr--ice-light, $gr--ice-dark, to right);
+            }
+            &:nth-child(1) {
+                transform: translate(-50%, -8px);
+            }
+            &:nth-child(3) {
+                transform: translate(-50%, 6px);
+            }
+        }
+    }
+
+    &:hover {
+        .gradient__bg {
+            opacity: 1;
+        }
+        .-menu {
+            span {
+                background: $blue--dark;
+            }
+        }
+    }
+
+    &:active {
+        .gradient__bg {
+            opacity: 0;
+        }
+        .gradient__line {
+            border-color: $gr--ice-light-hover;
+            &:after {
+                border-color: $gr--ice-dark-hover;
+            }
+        }
+        .-menu {
+            span {
+                background: $white;
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &.is-active {
+        .-menu  {
+            transform: translate(-50%, -50%) rotate(90deg);
+            span {
+                &:nth-child(2) {
+                    transform: translate(-50%, -50%) scale(0, 1);
+                }
+                &:nth-child(1) {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+                &:nth-child(3) {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+.icon {
+    &.-social {
+        width: 32px;
+        height: 32px;
+        margin-top: 5px;
+        margin-left: 5px;
+        .gradient__bg {
+            opacity: 0;
+            @include gradient(
+                $gr--ice-light, 
+                $gr--ice-dark
+            );
+        }
+        .gradient__line {
+            opacity: 1;
+            border-color: $white;
+            &.-blur {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+                border-color: $white;
+            }
+        }
+        
+        &:hover,
+        &.is-active {
+            .gradient__bg {
+                opacity: 1;
+            }
+            .gradient__line {
+                &.-blur {
+                    opacity: 1;
+                }
+            }
+            .-svg {
+                .-original {
+                    fill: $blue--dark;
+                }
+            }
+        }
+
+        &.is-active {
+            .-toggle-close {
+                svg {
+                    &:nth-child(1) {
+                        transform: scale(1.2);
+                        opacity: 0;
+                    }
+                    &:nth-child(2) {
+                        transition-delay: .1s;
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+            &:after {
+                visibility: hidden;
+            }
+        }
+    
+        &:active {
+            .gradient__bg {
+                opacity: 0;
+            }
+            .gradient__line {
+                border-color: $gr--ice-light-hover;
+                &:after {
+                    border-color: $gr--ice-dark-hover;
+                }
+            }
+            .-svg {
+                .-gradient,
+                .-blur {
+                    opacity: 1;
+                }
+            }    
+        }
+    }
+    .-svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        transition: transform .2s ease-in-out;
+
+        &.-toggle-close {
+            width: 50%;
+            height: 50%;
+            svg {
+                transition: transform .2s ease-in-out,
+                            opacity .2s ease-in-out;
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(0);
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.-email {
+            width: 50%;
+            height: 50%;
+        }
+
+        &.-facebook {
+            width: 25%;
+            top: 55%;
+        }
+        &.-twitter {
+            width: 50%;
+            top: 54%;
+        }
+        .-original {
+            transition: fill .2s ease-in-out;
+            fill: $white;
+        }
+        .-gradient,
+        .-blur {
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+        }
+
+        .-blur {
+            filter: blur(4px);
+        }
+    }
+}
+
+.icon__title {
+    ._title {
+        opacity: 0;
+        pointer-events: none;
+        @include transition(.2s, opacity);
+        display: block;
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: $white;
+        text-align: center;
+        font-size: .8rem;
+        white-space: nowrap;
+        text-shadow: 0 0 3px rgba($black, 1);
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+    &:hover {
+        ._title {
+            opacity: 1;
+        }
+    }
+}
+
+.grease__popup__wrapper  {
+    &.is-active {
+        .icon__title {
+            ._title {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.full-screen__wrapper {
+    @media (max-width: $desktop) {
+        display: none;
+        &.is-active {
+            display: block;
+        }
+    }
+}
+
+.full-screen {
+    position: absolute;
+    bottom: 1.75rem;
+    left: 3.75rem;
+    z-index: 4;
+    opacity: .2;
+    cursor: pointer;
+    @include transition(.5s, opacity);
+    img {
+        width: 18px;
+        height: 18px;
+        &:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    }
+
+    &.is-active {
+        img {
+            &:nth-child(1) {
+                opacity: 0;
+            }
+            &:nth-child(2) {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,59 @@
+.sound__wrapper {
+    @media (max-width: $desktop) {
+        opacity: 0;
+         &.is-active {
+             opacity: 1;
+         }
+    }
+}
+
+
+.sound {
+    width: 14px;
+    height: 18px;
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    display: flex;
+    opacity: .25;
+    z-index: 4;
+    @include transition(.5s, opacity);
+    justify-content: space-between;
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 2px;
+        height: 100%;
+        background: $white;
+        animation: sound .75s infinite linear;
+        transform: scale(1, .1);
+        transform-origin: bottom center;
+
+        &:nth-child(2) {
+            animation-delay: .2s;
+        }
+        &:nth-child(3) {
+            animation-delay: .1s;
+        }
+    }
+
+    &.is-muted {
+        span {
+            animation: none;
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@keyframes sound {
+    0%, 100% {
+        transform: scale(1, .1);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+}

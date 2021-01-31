@@ -1,0 +1,81 @@
+// HELPERS
+// =================
+// 1. Flex
+// 2. Gradiend
+// 3. Fonts
+// =================
+
+
+// 1. Flex
+// ---------------------
+%fx {
+	display: flex;
+	flex-wrap: wrap;
+
+	&--nowrap {
+		flex-wrap: nowrap;
+	}
+
+	&--wrap {
+		flex-wrap: nowrap;
+	}
+
+	&--col {
+		flex-direction: column;
+	}
+
+	&--between {
+		justify-content: space-between;
+	}
+
+	&--center {
+		justify-content: center;
+	}
+
+	&--end {
+		justify-content: flex-end;
+	}
+
+	&--start {
+		justify-content: flex-start;
+	}
+}
+
+%al {
+
+	&--center {
+		align-items: center;
+	}
+
+	&--start {
+		align-items: flex-start;
+	}
+
+	&--end {
+		align-items: flex-end;
+	}
+
+}
+// ---------------------
+
+
+// 3. Fonts
+// --------------------
+%f-light {
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+%f-normal {
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+%f-bold {
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+}
+// -------------------

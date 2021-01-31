@@ -1,0 +1,57 @@
+.footer__toggle {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $white;
+    border-radius: 50%;
+    background: $blue;
+}
+
+.footer {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 3;
+    @media (max-width: $desktop) {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+.footer__item {
+    position: relative;
+
+    .message {
+        position: absolute;
+        right: calc(100% + 1rem);
+        top: 50%;
+        white-space: nowrap;
+        transform: translate(0, -50%);
+        background: $blue--deep;
+        padding: 0.5rem 1rem;
+        color: $blue--dark;
+        font-size: .85rem;
+        border-radius: 5px;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(0, -50%);
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 8px solid $blue--deep;
+        }
+    }
+
+}
+
+.footer__social {
+    display: flex;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(0, -55%);
+}

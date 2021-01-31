@@ -1,0 +1,319 @@
+#app {
+    .input-box {
+        margin-bottom: 20px;
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    .input-line {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input {
+        display: flex;
+        flex-grow: 1;
+        
+        &.-intro {
+            border-radius: 25px;
+            overflow: hidden;
+            border: 3px solid $yellow;
+            background: $white;
+            box-shadow: inset 0 4px 16px rgba($black, .5);
+        }
+
+    }
+
+    .input-error {
+        text-align: left;
+        font-size: .85rem;
+        padding: 5px 0 5px 18px;
+        position: relative;
+        color: $blue;
+        &:before {
+            content: '!';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 0;
+            top: 8px;
+            border-radius: 50%;
+            background: $blue;
+            color: $white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 10px;
+            line-height: 14px;
+        }
+        &.-yellow {
+            color: $yellow;
+            &:before {
+                background: $yellow;
+                color: $blue;
+            }
+        }
+    }
+
+    input {
+        font-size: 1.1rem;
+        border: 3px solid $yellow;
+        border-right: none;
+        box-shadow: none;
+        padding: 5px 10px;
+        outline: none;
+        flex-grow: 1;
+        &::placeholder {
+            font-size: .95rem;
+        }
+    }
+
+    .button--search {
+        background: $yellow;
+        width: 40px;
+        position: relative;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .2s ease-in-out;
+        }
+        &:after {
+            width: 18px;
+            height: 18px;
+            border: 2px solid $white;
+            border-radius: 50%;
+            background: $yellow;
+        }
+        &:before {
+            width: 20px;
+            height: 2px;
+            background: $white;
+            transform: translate(-30%, 150%) rotate(45deg);
+        }
+        &:hover {
+            &:before {
+                background: $blue;
+            }
+            &:after {
+                border-color: $blue;
+            }
+        }
+    }
+
+    .add-location {
+        font-size: .9rem;
+        margin: 5px 0;
+        text-align: left;
+        strong {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .icon {
+        display: inline-block;
+    }
+
+    .icon--location  {
+        cursor: pointer;
+        width: 4px;
+        height: 4px;
+        margin: 0 0 0 15px;
+        border-radius: 50%;
+        position: relative;
+        transition: transform .05s ease-in-out, 
+                    opacity .05s ease-in-out;
+        background: $black;
+        opacity: .5;
+
+        &:before, 
+        &:after {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 1px;
+            background: $black;
+            left: 50%;
+        }
+        &:before {
+            top: -6px;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &:after {
+            top: 10px;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        span {
+            position: absolute;
+            border: 1px solid $black;
+            display: block;
+            width: 18px;
+            height: 18px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            &:before, 
+            &:after {
+                content: "";
+                position: absolute;
+                width: 5px;
+                height: 1px;
+                background: $black;
+                top: 50%;
+            }
+            &:before {
+                left: 0px;
+                transform: translate(-50%, -50%);
+            }
+
+            &:after {
+                left: 16px;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &.-white {
+            background: $white;
+            
+            span {
+                border-color: $white;
+            }
+
+            &,
+            span {
+                &:before,
+                &:after {
+                    background: $white;
+                }	
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+            transform: scale(.9);					
+        }
+    }
+
+    .icon--delete {
+        cursor: pointer;
+        position: absolute;
+        left: -20px;
+    }
+
+    .months {
+        display: flex;
+        margin-right: 20px;
+        margin-bottom: 5px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: .7rem;
+        line-height: .85rem;
+        &.is-full {
+            margin-right: 0;
+        }
+        ul {
+            display: flex;
+            list-style: none !important;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+            font-size: .7rem;
+            margin: 0;
+            margin-left: 10px;
+            padding: 4px 5px;
+            background: rgba($black, .05);
+            border-radius: 3px;
+            list-style-type: none;
+            &.is-active {
+                color: $white;
+                background: $blue;
+            }
+        }
+    }
+
+    .search-loading {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        right: 65px;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        border: 2px solid rgba($black, .35);
+        animation: searchLoading 1s ease-in-out infinite;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: -3px;
+            left: 50%;
+            transform: translate(-50%);
+            background: $white;
+        }
+
+        &-2 {
+            &:after {
+                top: calc(100% - 3px);
+            }
+        }
+
+    }
+
+    .input.-intro {
+    
+        input {
+            background: transparent;
+            border: none;
+            padding: 10px 30px;
+        }
+
+        .button--search {
+            width: 60px;
+            &:before {
+                background: $blue;
+            }
+            &:after {
+                width: 15px;
+                height: 15px;
+                border-color: $blue;
+            }
+        }
+
+    }
+
+    .use-my-location {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .icon {
+            margin-right: 15px;
+        }
+    }
+
+}
+
+@keyframes searchLoading {
+    0% {
+        transform: translate(0, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(0, -50%) rotate(360deg);	
+    }
+}
+    

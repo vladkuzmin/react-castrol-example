@@ -1,0 +1,104 @@
+{
+	"0": {
+		"title": "Do you own your own home?",
+		"img": [
+			"/assets/img/scenes/own-house/one.svg",
+			"/assets/img/scenes/own-house/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 1
+			},
+			{
+				"label": "No",
+				"next": 2,
+				"key": "selling" 
+			}
+		]
+	},
+
+	"1": {
+		"title": "Are you planning on selling your home?",
+		"img": [
+			"/assets/img/scenes/income/one.svg",
+			"/assets/img/scenes/income/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 2,
+				"key": "selling"
+			},
+			{
+				"label": "No",
+				"next": "Unfortunately you are not eligible for a Help to Buy scheme as you already own a home",
+				"desc": "The schemes are designed to help people purchase their only home",
+				"img": ["/assets/img/scenes/no-scheme.svg"]
+			}
+		]
+	},
+
+	"2": {
+		"title": "What's your age?",
+		"img": [
+			"/assets/img/scenes/age/one.svg",
+			"/assets/img/scenes/age/two.svg",
+			"/assets/img/scenes/age/three.svg"
+		],
+		"options": [
+			{
+				"label": "15-39",
+				"next": 3,
+				"key": "age"
+			},
+			{
+				"label": "40+",
+				"next": 3,
+				"key": "age"
+			}			
+		]
+	},
+
+	"3": {
+		"title": "What's the total deposit you have available?",
+		"img": [
+			"/assets/img/scenes/deposit/one.svg",
+			"/assets/img/scenes/deposit/two.svg"
+		],
+		"options": [
+			{
+				"label": "Less than 5%",
+				"next": 4,
+				"key": "deposit"
+			}, 
+			{
+				"label": "At least 5%",
+				"next": 4,
+				"key": "deposit"
+			}
+		]
+	},
+	"4": {
+		"title": "Do you plan on renting out the property?",
+		"img": [
+			"/assets/img/scenes/renting/one.svg",
+			"/assets/img/scenes/renting/two.svg",
+			"/assets/img/scenes/renting/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": "No schemes available",
+				"desc": "The schemes are designed to help people purchase their only home",
+				"img": ["/assets/img/scenes/no-scheme.svg"] 
+ 			},
+ 			{
+				"label": "No",
+				"next": "results"
+ 			}
+		]
+	}
+
+
+}

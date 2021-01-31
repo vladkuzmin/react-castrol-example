@@ -1,0 +1,151 @@
+.results {
+	margin: 0 auto;
+	opacity: 0;
+	transform: translate(0, 100px);
+	transition: opacity .5s ease-in-out,
+				transform .5s ease-in-out;
+
+	&.is-visible {
+		opacity: 1;
+		transform: translate(0);
+	}
+	
+	&__title {
+		margin: 30px auto 20px;
+		max-width: 1100px;
+		div {
+			display: inline-block;
+			span {
+				display: inline-block;
+				opacity: 0;
+				transform: translate(0, 5px);
+				transition: opacity .2s ease-in-out .25s,
+							transform .2s ease-in-out .25s;
+				&.is-active {
+					opacity: 1;
+					transform: translate(0);
+				}
+			}
+		}
+	} 
+
+	&__desc {
+		margin: 0 auto 40px;
+		max-width: 870px;
+		opacity: 0;
+		transform: translate(0, 50%) skew(10deg);
+		transition: opacity .5s ease-in-out .25s,
+					transform .5s ease-in-out .25;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0);
+		}
+	}
+}
+
+
+.result__options {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 -10px;
+
+	.result {
+		opacity: 0;
+		transform: translate(0, 30px) scale(.75);
+		transition: opacity .5s ease-in-out .5s,
+					transform .5s ease-in-out .5s;
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0) scale(1);
+		}
+	}
+
+	.result__desc {
+		opacity: 1;
+		transform: translate(0);
+		flex: 1 0 auto;
+	}
+}
+
+.result {
+	display: flex;
+	flex-direction: column;
+	padding: 30px 20px;
+	background: $green-lightest;
+	flex: 1 0 250px;
+	max-width: 460px;
+	margin: 10px;
+	border-radius: 10px;
+
+	@include bp(xs) {
+		flex: 1 0 330px;
+	}
+
+
+	&.-lg {
+		min-width: 0;
+		max-width: 980px;
+		width: 100%;
+		padding: 40px 30px;
+		margin: 10px auto;
+
+		@include bp(md) {
+			padding: 60px 100px 40px 100px;
+		}
+	}
+
+	&__title {
+		@extend h4;
+		flex: 1 0 0;
+		margin-bottom: 10px;
+		@include bp(xs) {
+			margin-bottom: 30px;
+		}
+
+		div {
+			display: inline-block;
+			span {
+				display: inline-block;
+				opacity: 0;
+				transform: translate(0, 5px);
+				transition: opacity .2s ease-in-out,
+							transform .2s ease-in-out;
+				&.is-active {
+					opacity: 1;
+					transform: translate(0);
+				}
+			}
+		}
+	}
+
+	&__subtitle {
+		@extend p;
+		font-family: $font-bold;
+	}
+
+	&__desc {
+		@extend p;
+		margin-bottom: 20px;
+		opacity: 0;
+		transform: translate(0, 50%) skew(10deg);
+		transition: opacity .5s ease-in-out,
+					transform .5s ease-in-out;
+
+		&.is-visible {
+			opacity: 1;
+			transform: translate(0);
+		}
+	}
+
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.back-btn {
+			margin-top: 30px;
+		}
+	}
+}

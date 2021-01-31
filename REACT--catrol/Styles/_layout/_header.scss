@@ -1,0 +1,24 @@
+header {
+    position: fixed;
+    top: 10px; 
+    left: 10px;
+    z-index: 1;
+
+    ul {
+        @extend %ul--reset;
+        display: flex;
+        padding: 10px;
+        background: $navy;
+    }
+
+    li {
+        margin-left: 10px;
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-size: .75rem;
+            text-transform: uppercase;
+        }
+    }
+}

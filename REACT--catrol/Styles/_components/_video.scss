@@ -1,0 +1,157 @@
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
+
+.video__wrapper {
+    @include transition(.5s, opacity);
+    &.is-hidden {
+        opacity: 0;
+    }
+
+    &.is-opacity {
+        transition-duration: 1s;
+        opacity: .35;
+    }
+
+    &.is-leave {
+        opacity: 0;
+        .video-bg {
+            @media (max-width: $mobile) {
+               transform: translate(-50%, -75%);
+            }
+        }
+    }
+
+    &.is-active {
+        .video {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+}
+
+.video {
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+
+    &.is-animated {
+        z-index: 1;
+        @include transition(.5s, opacity);
+    }
+
+    &.is-active {
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.video-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (orientation: portrait) {
+        @include transition(.5s, transform);
+        width: 200%;
+        height: auto;
+        top: 0;
+        transform: translate(-50%, 0);
+        mask-image: linear-gradient(to bottom, transparent 0%, $black 0%, $black 75%, transparent 100%);
+    }
+
+    .-full & {
+        @media (orientation: portrait) {
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            mask-image: none;
+        }
+    }
+
+    .grease__wrapper & {
+        @media (orientation: portrait) {
+            @include transition(.5s, (height, width));
+            height: calc(100vw * 1.25);
+        }
+    }
+
+    .is-scaled & {
+        @media (orientation: portrait) {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .-menu & {
+        @media (orientation: portrait) {
+            width: 175%;
+            transform: translate(-55%, 0)
+        }
+    }
+
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.video-radial-gradient {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle, rgba($primary-bg, .15) 0%, rgba($primary-bg,1) 65%);
+    transform: scale(1.2);
+    @include transition(1s, (opacity, transform));
+    &.is-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+ }
+
+ .video-loader {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: $primary-bg;
+     @include transition(.2s);
+     span {
+         position: absolute;
+         display: block;
+         width: 45px;
+         height: 45px;
+         border-radius: 50%;
+         border: 4px solid $blue;
+         border-top-color: $primary-bg;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         animation: spin 1s ease-in-out infinite;
+     }
+
+     &.is-hidden {
+         opacity: 0;
+         visibility: hidden;
+     }
+ }
+
+ @keyframes spin {
+     0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+     }
+     100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+     }
+ }

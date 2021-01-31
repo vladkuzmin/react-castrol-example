@@ -1,0 +1,17 @@
+#shapes {
+	img {
+		position: absolute;
+		width: 15%;
+		max-width: 150px;
+		bottom: -1px;
+		left: -1px;
+
+		&:first-child {
+			left: auto;
+			bottom: auto;
+			right: -1px;
+			top: -1px;
+			transform: rotate(180deg);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.logo {
+    position: absolute;
+    width: 125px;
+    z-index: 2;
+    left: 2rem;
+    top: 2rem;
+    pointer-events: none;
+    opacity: 0;
+    @include transition(.5s, opacity);
+
+    @media (max-width: $desktop) {
+        left: 1rem;
+        top: 1rem;
+        width: 100px;
+    }
+
+    @media (max-height: $desktop) {
+        width: 75px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &.is-visible {
+        opacity: 1;
+    }
+}

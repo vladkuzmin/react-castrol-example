@@ -1,0 +1,225 @@
+{
+	"0": {
+		"title": "Are you a council tenant?",
+		"img": ["/assets/img/scenes/scene-council.svg"],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 6
+
+			},
+			{
+				"label": "No",
+				"key": "tenancy",
+				"next": 1
+			}
+		]
+	},
+
+	"1": {
+		"title": "Do you live in London?",
+		"img": [
+			"/assets/img/scenes/london/one.svg",
+			"/assets/img/scenes/london/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 2,
+				"key": "london"
+			},
+			{
+				"label": "No",
+				"next": 2,
+				"key": "london"
+			}
+		]
+	}, 
+
+	"2": {
+		"title": "What's your age?",
+		"img": [
+			"/assets/img/scenes/age/one.svg",
+			"/assets/img/scenes/age/two.svg",
+			"/assets/img/scenes/age/three.svg"
+		],
+		"options": [
+			{
+				"label": "15-39",
+				"next": 3,
+				"key": "age"
+			},
+			{
+				"label": "40+",
+				"next": 3,
+				"key": "age"
+			}
+		]
+	},
+
+	"3": {
+		"title": "What's your household income?",
+		"img": [
+			"/assets/img/scenes/income/one.svg",
+			"/assets/img/scenes/income/two.svg"
+		],
+		"options": [
+			{
+				"label": "£60k or less",
+				"next": 4,
+				"key": "income"
+			},
+			{
+				"label": "£60-90k",
+				"next": 4,
+				"key": "income"
+			},
+			{
+				"label": "£90k+",
+				"next": 4,
+				"key": "income"
+			}
+		]
+	},
+
+	"4": {
+		"title": "Do you plan on renting out the property?",
+		"img": [
+			"/assets/img/scenes/renting/one.svg",
+			"/assets/img/scenes/renting/two.svg",
+			"/assets/img/scenes/renting/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": "No available"
+			},
+			{
+				"label": "No",
+				"next": 5
+			}
+		]
+	},
+
+	"5": {
+		"title": "Do you have a 5% deposit saved up and are hoping to buy within the next year?",
+		"img": [
+			"/assets/img/scenes/deposit/one.svg",
+			"/assets/img/scenes/deposit/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"key": "deposit",
+				"next": "results"
+			},
+			{
+				"label": "No",
+				"next": "results",
+				"key": "deposit"
+			}
+		]
+	},
+	
+	"6": {
+		"title": "Is the council house your only/main home?",
+		"img": [
+			"/assets/img/scenes/main-house/one.svg",
+			"/assets/img/scenes/main-house/two.svg",
+			"/assets/img/scenes/main-house/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 7
+			},
+			{
+				"label": "No",
+				"next": 1,
+				"key": "tenancy"
+			}
+		]
+	},
+
+	"7": {
+		"title": "Have you had a public service landlord for 3 years in total?",
+		"img": [
+			"/assets/img/scenes/calendar/one.svg",
+			"/assets/img/scenes/calendar/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 8
+			},
+			{
+				"label": "No",
+				"next": 1,
+				"key": "tenancy"
+			}
+		]
+	},
+
+	"8": {
+		"title": "Is the property self contained?",
+		"img": [
+			"/assets/img/scenes/self-conrained/one.svg",
+			"/assets/img/scenes/self-conrained/two.svg",
+			"/assets/img/scenes/self-conrained/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 9,
+				"key": "tenancy"
+			},
+			{
+				"label": "No",
+				"next": 1,
+				"key": "tenancy"
+			}
+		]
+	},
+
+	"9": {
+		"title": "Do you live in London?",
+		"img": [
+			"/assets/img/scenes/london/one.svg",
+			"/assets/img/scenes/london/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 10,
+				"key": "london"
+			},
+			{
+				"label": "No",
+				"next": 10,
+				"key": "london"
+			}
+		]
+	},
+
+	"10": {
+		"title": "What's your age?",
+		"img": [
+			"/assets/img/scenes/age/one.svg",
+			"/assets/img/scenes/age/two.svg",
+			"/assets/img/scenes/age/three.svg"
+		],
+		"options": [
+			{
+				"label": "15-39",
+				"next": "results",
+				"key": "age"
+			},
+			{
+				"label": "40+",
+				"next": "results",
+				"key": "age"
+			}
+		]
+	}
+
+}

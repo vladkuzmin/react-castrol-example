@@ -1,0 +1,137 @@
+{
+	"0": {
+		"title": "Do you own your home?",
+		"img": [
+			"/assets/img/scenes/own-house/one.svg",
+			"/assets/img/scenes/own-house/two.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 1
+			},
+			{
+				"label": "No",
+				"next": 2
+			}
+		]
+	},
+
+	"1": {
+		"title": "Is your home under offer with solicitors instructing the sale?",
+		"img": [
+			"/assets/img/scenes/council/two.svg",
+			"/assets/img/scenes/council/one.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": 2
+			},
+			{
+				"label": "No",
+				"next": "Unfortunately you are not eligible for a Help to Buy scheme as you already own a home. The schemes are designed to help people purchase their only home."
+			}
+		]
+	},
+
+	"2": {
+		"title": "What's your age?",
+		"img": [
+			"/assets/img/scenes/age/one.svg",
+			"/assets/img/scenes/age/two.svg",
+			"/assets/img/scenes/age/three.svg"
+		],
+		"options": [
+			{
+				"label": "15-39",
+				"next": 3, 
+				"key": "age"
+			},
+			{
+				"label": "40+",
+				"next": 3, 
+				"key": "age"
+			}
+		]
+	},
+
+	"3": {
+		"title": "What's your household income?",
+		"img": [
+			"/assets/img/scenes/income/one.svg",
+			"/assets/img/scenes/income/two.svg"
+		],
+		"options": [
+			{
+				"label": "£60k or less",
+				"next": 4,
+				"key": "income"
+			}, 
+			{
+				"label": "Higher than £60k",
+				"next": 5,
+				"key": "income"
+			}
+		]
+	},
+
+	"4": {
+		"title": "Do you plan on renting out the property?",
+		"img": [
+			"/assets/img/scenes/renting/one.svg",
+			"/assets/img/scenes/renting/two.svg",
+			"/assets/img/scenes/renting/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": "No schemes available"
+ 			},
+ 			{
+				"label": "No",
+				"next": "results"
+ 			}
+		]
+	},
+
+	"5": {
+		"title": "Do you plan on renting out the property?",
+		"img": [
+			"/assets/img/scenes/renting/one.svg",
+			"/assets/img/scenes/renting/two.svg",
+			"/assets/img/scenes/renting/three.svg"
+		],
+		"options": [
+			{
+				"label": "Yes",
+				"next": "No schemes available"
+ 			},
+ 			{
+				"label": "No",
+				"next": 6
+ 			}
+		]
+	},
+
+	"6": {
+		"title": "What's the total deposit you have available?",
+		"img": [
+			"/assets/img/scenes/deposit/one.svg",
+			"/assets/img/scenes/deposit/two.svg"
+		],
+		"options": [
+			{
+				"label": "Less than 5%",
+				"next": "results",
+				"key": "deposit"
+			}, 
+			{
+				"label": "At least 5%",
+				"next": "results",
+				"key": "deposit"
+			}
+		]
+	}
+
+}

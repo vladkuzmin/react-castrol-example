@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    // background: $navy;
+    background: $primary-bg; // TODO: change later to match the video
+    font-family: $bodyFont;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // cursor: none;
+
+    @media (max-width: $desktop) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $tablet) {
+        cursor: default;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 12px;
+        background: $primary-bg; // TODO: change later to match the video
+    }
+}
+
+// main.landscape-warn {
+//     padding: 0 1rem;
+
+//     * {
+//         opacity: 0;
+//     }
+    
+//     &:after {
+//         content: 'Please Rotate your device to landscape for best experience.';
+//         background: $navy;
+//         color: $white;
+//         font-size: 2rem;
+//         text-transform: uppercase;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         width: 100%;
+//         min-height: 97vh;
+//         text-align: center;
+//     }  
+// }
